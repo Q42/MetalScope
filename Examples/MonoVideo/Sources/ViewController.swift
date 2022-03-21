@@ -60,7 +60,8 @@ final class ViewController: UIViewController {
     }
 
     private func loadVideo() {
-        let url = Bundle.main.url(forResource: "Sample", withExtension: "mp4")!
+//        let url = Bundle.main.url(forResource: "Sample", withExtension: "mp4")!
+        let url = URL(string: "https://d8d913s460fub.cloudfront.net/krpanocloud/video/airpano/video-1920x960a.mp4")!
         let playerItem = AVPlayerItem(url: url)
         let player = AVQueuePlayer(playerItem: playerItem)
 
@@ -74,7 +75,7 @@ final class ViewController: UIViewController {
         } else {
             player.actionAtItemEnd = .none
             playerObservingToken = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: playerItem, queue: nil) { _ in
-                player.seek(to: kCMTimeZero, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
+                player.seek(to: .zero)
             }
         }
 
@@ -98,7 +99,7 @@ final class ViewController: UIViewController {
         return .lightContent
     }
 
-    func togglePlaying() {
+    @objc func togglePlaying() {
         guard let player = player else {
             return
         }

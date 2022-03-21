@@ -52,8 +52,8 @@ internal final class StereoRenderer {
         eyeTextureDescriptor.usage = .renderTarget
 
         eyeRenderingConfigurations = [
-            .left: EyeRenderingConfiguration(texture: device.makeTexture(descriptor: eyeTextureDescriptor)),
-            .right: EyeRenderingConfiguration(texture: device.makeTexture(descriptor: eyeTextureDescriptor))
+            .left: EyeRenderingConfiguration(texture: device.makeTexture(descriptor: eyeTextureDescriptor)!),
+            .right: EyeRenderingConfiguration(texture: device.makeTexture(descriptor: eyeTextureDescriptor)!)
         ]
     }
 
@@ -75,7 +75,7 @@ internal final class StereoRenderer {
         for (eye, configuration) in eyeRenderingConfigurations {
             semaphore.wait()
 
-            let commandBuffer = commandQueue.makeCommandBuffer()
+            let commandBuffer = commandQueue.makeCommandBuffer()!
 
             rendererDelegateProxy.currentRenderingEye = eye
 
@@ -99,7 +99,7 @@ internal final class StereoRenderer {
                 destinationOrigin = MTLOrigin(x: outputTexture.width / 2, y: 0, z: 0)
             }
 
-            let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder()
+            let blitCommandEncoder = commandBuffer.makeBlitCommandEncoder()!
             blitCommandEncoder.copy(
                 from: texture,
                 sourceSlice: 0,
