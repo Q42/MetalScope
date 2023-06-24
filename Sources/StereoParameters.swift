@@ -59,7 +59,7 @@ extension StereoParametersProtocol {
         return projection
     }
 
-    func projectionFromFrustum(_ frustum: float4) -> SCNMatrix4 {
+    func projectionFromFrustum(_ frustum: SIMD4<Float>) -> SCNMatrix4 {
         return projectionFromFrustum(frustum[0], frustum[1], frustum[2], frustum[3])
     }
 
@@ -106,7 +106,7 @@ extension StereoParametersProtocol {
     /// Most of the code in this section was originally ported from Google's Cardboard SDK for Unity
     /// https://github.com/googlevr/gvr-unity-sdk/blob/v0.6/Cardboard/Scripts/CardboardProfile.cs
 
-    var leftEyeVisibleTanAngles: float4 {
+    var leftEyeVisibleTanAngles: SIMD4<Float> {
         let fov = viewer.maximumFieldOfView
 
         let fovOuter = fov.outer * .pi / 180
@@ -131,7 +131,7 @@ extension StereoParametersProtocol {
         let screenRight = viewer.distortion.distort((centerX + halfWidth) / centerZ)
         let screenBottom = viewer.distortion.distort((centerY - halfHeight) / centerZ)
 
-        let result = float4(
+        let result = SIMD4<Float>(
             max(fovLeft, screenLeft),
             min(fovTop, screenTop),
             min(fovRight, screenRight),
@@ -141,7 +141,7 @@ extension StereoParametersProtocol {
         return result
     }
 
-    var leftEyeNoLensVisibleTanAngles: float4 {
+    var leftEyeNoLensVisibleTanAngles: SIMD4<Float> {
         let fov = viewer.maximumFieldOfView
 
         let fovOuter = fov.outer * .pi / 180
@@ -166,7 +166,7 @@ extension StereoParametersProtocol {
         let screenRight = (centerX + halfWidth) / centerZ
         let screenBottom = (centerY - halfHeight) / centerZ
 
-        let result = float4(
+        let result = SIMD4<Float>(
             max(fovLeft, screenLeft),
             min(fovTop, screenTop),
             min(fovRight, screenRight),
