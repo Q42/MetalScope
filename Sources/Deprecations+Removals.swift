@@ -45,4 +45,4 @@ extension OrientationNode {
 }
 
 @available(*, unavailable, message: "This protocol has been removed. Use `SceneLoadable`, `ImageLoadable` and `VideoLoadable` instead")
-public protocol MediaSceneLoader: class {}
+public protocol MediaSceneLoader: AnyObject {}

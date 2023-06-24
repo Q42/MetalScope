@@ -9,7 +9,7 @@
 import SceneKit
 import UIKit
 
-public protocol OrientationIndicatorDataSource: class {
+public protocol OrientationIndicatorDataSource: AnyObject {
     var pointOfView: SCNNode? { get }
     var viewportSize: CGSize { get }
 }
