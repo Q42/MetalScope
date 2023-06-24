@@ -9,7 +9,7 @@
 import SceneKit
 import UIKit
 
-public protocol ImageScene: class {
+public protocol ImageScene: AnyObject {
     var image: UIImage? { get set }
 }
 

@@ -11,7 +11,7 @@
 import SceneKit
 import AVFoundation
 
-public protocol VideoScene: class {
+public protocol VideoScene: AnyObject {
     var renderer: PlayerRenderer { get }
 
     init(renderer: PlayerRenderer)

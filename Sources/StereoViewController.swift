@@ -268,7 +268,7 @@ open class StereoViewController: UIViewController, SceneLoadable {
             handler(sender)
         } else if sender.allTargets.count == 1 {
             let url = URL(string: "https://support.google.com/cardboard/answer/6383058")!
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 
@@ -344,7 +344,7 @@ open class StereoViewController: UIViewController, SceneLoadable {
         precondition(introductionViewUpdateTimer == nil)
 
         let timer = DispatchSource.makeTimerSource(queue: .main)
-        timer.scheduleRepeating(deadline: .now() + delay, interval: interval)
+        timer.schedule(deadline: .now() + delay, repeating: interval)
         timer.setEventHandler { [weak self] in
             guard self?.isViewLoaded == true, let _ = self?.introductionView else {
                 return

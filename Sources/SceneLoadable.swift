@@ -8,6 +8,6 @@
 
 import SceneKit
 
-public protocol SceneLoadable: class {
+public protocol SceneLoadable: AnyObject {
     var scene: SCNScene? { get set }
 }
