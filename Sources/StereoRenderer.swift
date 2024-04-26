@@ -137,6 +137,8 @@ extension MTLCommandBufferStatus: CustomStringConvertible {
             return "notEnqueued"
         case .scheduled:
             return "scheduled"
+        @unknown default:
+            return "unknown"
         }
     }
 }

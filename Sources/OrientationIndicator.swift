@@ -122,6 +122,8 @@ public final class OrientationIndicatorLayer: CALayer, OrientationIndicator {
                 fovInDegree = Double(camera.fieldOfView)
             case .vertical:
                 fovInDegree = Double(camera.fieldOfView) * viewportRatio
+            @unknown default:
+                return
         }
 
 
