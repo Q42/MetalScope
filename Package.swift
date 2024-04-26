@@ -18,7 +18,6 @@ let package = Package(
         .target(
             name: "MetalScope",
             path: "Sources",
-            exclude: ["Info.plist", "MetalScope.h"],
             resources: [
                 .process("Assets.xcassets"),
             ]
