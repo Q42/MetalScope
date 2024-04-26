@@ -12,7 +12,7 @@ Metal-backed 360° panorama view for iOS.
 | :arrow_forward:          | Direct access to AVPlayer for video control
 | :point_up_2:             | Smooth touch rotation and re-centering
 | :sunrise_over_mountains: | Custom SCNScene presentation
-| :bird:                   | Written in Swift 3
+| :bird:                   | Written in Swift 5
 
 ## Usage
 
@@ -115,25 +115,13 @@ NOTE: Metal is not supported in the iOS Simulator 😢
 
 ## Installation
 
-### Carthage
+### Swift Package Manager
 
-If you use [Carthage](https://github.com/Carthage/Carthage) to manage your dependencies, add MetalScope to your `Cartfile`:
-
-```
-github "ejeinc/MetalScope"
-```
-
-### CocoaPods
-
-If you use [CocoaPods](https://github.com/CocoaPods/CocoaPods) to manage your dependencies, add MetalScope to your `Podfile`:
+If you use the Swift Package Manager, add MetalScope as a dependency using the following URL:
 
 ```
-pod 'MetalScope'
+https://github.com/Q42/MetalScope
 ```
-
-### Manually
-
-You can also manually install the framework by dragging and dropping the `MetalScope.xcodeproj` into your project or workspace.
 
 ## License
 
