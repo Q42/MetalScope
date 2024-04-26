@@ -40,6 +40,7 @@ public struct Lenses {
     public let separation: Float
     public let offset: Float
     public let alignment: Alignment
+
     public let screenDistance: Float
 
     public init(separation: Float, offset: Float, alignment: Alignment, screenDistance: Float) {
@@ -50,17 +51,29 @@ public struct Lenses {
     }
 }
 
+/// Models the field of view, expressed in degrees.
 public struct FieldOfView {
-    public let outer: Float // in degrees
-    public let inner: Float // in degrees
-    public let upper: Float // in degrees
-    public let lower: Float // in degrees
+    /// In degrees
+    public let outer: Float
+    /// In degrees
+    public let inner: Float
+    /// In degrees
+    public let upper: Float
+    /// In degrees
+    public let lower: Float
 
     public init(outer: Float, inner: Float, upper: Float, lower: Float) {
         self.outer = outer
         self.inner = inner
         self.upper = upper
         self.lower = lower
+    }
+
+    public init(all fov: Float) {
+        self.outer = fov
+        self.inner = fov
+        self.upper = fov
+        self.lower = fov
     }
 
     public init(values: [Float]) {
@@ -74,8 +87,12 @@ public struct FieldOfView {
     }
 }
 
+/// Models the distortion of the lenses.
+/// https://en.wikipedia.org/wiki/Distortion_(optics)
 public struct Distortion {
+    /// k1 is the radial distortion coefficient of the first order
     public var k1: Float
+    /// k2 can be used to counteract the main distortion at the periphery of the image
     public var k2: Float
 
     public init(k1: Float, k2: Float) {

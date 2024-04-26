@@ -8,12 +8,36 @@
 
 import UIKit
 
-public enum ScreenModel {
-    case iPhone4
-    case iPhone5
-    case iPhone6
-    case iPhone6Plus
-    case custom(parameters: ScreenParametersProtocol)
+public struct ScreenModel: ScreenParametersProtocol, Decodable {
+    /// In 1/1000 of millimeters
+    public let width: Float
+    /// In 1/1000 of millimeters
+    public let height: Float
+    /// In 1/1000 of millimeters
+    public let border: Float
+
+    private init(width: Float, height: Float, border: Float) {
+        self.width = width
+        self.height = height
+        self.border = border
+    }
+
+    /// Convenience initializer that uses whole millimeters as units
+    private init(widthMM: Int, heightMM: Int, borderMM: Int) {
+        self.width = Float(widthMM) / 1000
+        self.height = Float(heightMM) / 1000
+        self.border = Float(borderMM) / 1000
+    }
+
+    static func custom(parameters: ScreenParametersProtocol) -> ScreenModel {
+        ScreenModel(width: parameters.width, height: parameters.height, border: parameters.border)
+    }
+
+    public static let iPhone4 = ScreenModel(width: 0.075, height: 0.050, border: 0.0045)
+    public static let iPhone5 = ScreenModel(width: 0.089, height: 0.050, border: 0.0045)
+    public static let iPhone6 = ScreenModel(width: 0.104, height: 0.058, border: 0.005)
+    public static let iPhone6Plus = ScreenModel(width: 0.112, height: 0.068, border: 0.005)
+    public static let iPhoneX = ScreenModel(width: 0.133, height: 0.063, border: 0.005)
 
     public static let iPhone4S = ScreenModel.iPhone4
     public static let iPhone5s = ScreenModel.iPhone5
@@ -26,7 +50,7 @@ public enum ScreenModel {
     public static let iPodTouch = ScreenModel.iPhone5
 
     public static var `default`: ScreenModel {
-        return ScreenModel.current ?? .iPhone5
+        return ScreenModel.current ?? .iPhone6
     }
 
     public static var current: ScreenModel? {
@@ -68,6 +92,8 @@ public enum ScreenModel {
             self = .iPhone6sPlus
         } else if match(identifier, ["iPhone9,2", "iPhone9,4"]) {
             self = .iPhone7Plus
+        } else if match(identifier, ["iPhone10,3", "iPhone10,6"]) {
+            self = .iPhoneX
         } else if match(identifier, ["iPod7,1"]) {
             self = .iPodTouch
         } else {
@@ -88,34 +114,5 @@ public enum ScreenModel {
         default:
             return nil
         }
-    }
-}
-
-extension ScreenModel: ScreenParametersProtocol {
-    private var parameters: ScreenParameters {
-        switch self {
-        case .iPhone4:
-            return ScreenParameters(width: 0.075, height: 0.050, border: 0.0045)
-        case .iPhone5:
-            return ScreenParameters(width: 0.089, height: 0.050, border: 0.0045)
-        case .iPhone6:
-            return ScreenParameters(width: 0.104, height: 0.058, border: 0.005)
-        case .iPhone6Plus:
-            return ScreenParameters(width: 0.112, height: 0.068, border: 0.005)
-        case .custom(let parameters):
-            return ScreenParameters(parameters)
-        }
-    }
-
-    public var width: Float {
-        return parameters.width
-    }
-
-    public var height: Float {
-        return parameters.height
-    }
-
-    public var border: Float {
-        return parameters.border
     }
 }

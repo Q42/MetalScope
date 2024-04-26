@@ -7,9 +7,14 @@
 //
 
 public protocol ScreenParametersProtocol {
-    var width: Float { get }  // The long edge of the device.
-    var height: Float { get } // The short edge of the device.
-    var border: Float { get } // Distance from bottom of the cardboard to the bottom edge of screen.
+    /// The long edge of the device.
+    var width: Float { get }
+    
+    /// The short edge of the device.
+    var height: Float { get }
+
+    /// Distance from bottom of the cardboard/headset to the bottom edge of screen.
+    var border: Float { get }
 }
 
 public struct ScreenParameters: ScreenParametersProtocol {
