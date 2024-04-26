@@ -29,6 +29,12 @@ public final class StereoView: UIView, SceneLoadable {
         }
     }
 
+    public var technique: SCNTechnique? {
+        didSet {
+            stereoRenderer.technique = technique
+        }
+    }
+
     public weak var sceneRendererDelegate: SCNSceneRendererDelegate? {
         didSet {
             #if (arch(arm) || arch(arm64)) && os(iOS)

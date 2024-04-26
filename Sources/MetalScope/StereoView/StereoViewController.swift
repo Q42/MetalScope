@@ -26,6 +26,12 @@ open class StereoViewController: UIViewController, SceneLoadable {
         }
     }
 
+    open var technique: SCNTechnique? {
+        didSet {
+            _stereoView?.technique = technique
+        }
+    }
+
     open var stereoView: StereoView {
         if !isViewLoaded {
             loadView()

@@ -23,6 +23,12 @@ internal final class StereoRenderer {
         }
     }
 
+    var technique: SCNTechnique? {
+        didSet {
+            scnRenderer.technique = technique
+        }
+    }
+
     let scnRenderer: SCNRenderer
 
     weak var sceneRendererDelegate: SCNSceneRendererDelegate? {
