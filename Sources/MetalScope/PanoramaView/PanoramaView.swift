@@ -25,6 +25,12 @@ public final class PanoramaView: UIView, SceneLoadable {
         }
     }
 
+    public var technique: SCNTechnique? {
+        didSet {
+            scnView.technique = technique
+        }
+    }
+
     public weak var sceneRendererDelegate: SCNSceneRendererDelegate?
 
     public lazy var orientationNode: OrientationNode = {
