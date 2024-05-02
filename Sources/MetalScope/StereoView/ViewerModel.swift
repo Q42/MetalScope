@@ -6,7 +6,7 @@
 //  Copyright © 2017 eje Inc. All rights reserved.
 //
 
-public struct ViewerModel: ViewerParametersProtocol {
+public struct ViewerModel: ViewerParametersProtocol, Hashable {
     public let lenses: Lenses
     public let distortion: Distortion
     public let maximumFieldOfView: FieldOfView

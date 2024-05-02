@@ -30,7 +30,7 @@ public struct ViewerParameters: ViewerParametersProtocol {
     }
 }
 
-public struct Lenses {
+public struct Lenses: Hashable {
     public enum Alignment: Int {
         case top = -1
         case center = 0
@@ -52,7 +52,7 @@ public struct Lenses {
 }
 
 /// Models the field of view, expressed in degrees.
-public struct FieldOfView {
+public struct FieldOfView: Hashable {
     /// In degrees
     public let outer: Float
     /// In degrees
@@ -89,7 +89,7 @@ public struct FieldOfView {
 
 /// Models the distortion of the lenses.
 /// https://en.wikipedia.org/wiki/Distortion_(optics)
-public struct Distortion {
+public struct Distortion: Hashable {
     /// k1 is the radial distortion coefficient of the first order
     public var k1: Float
     /// k2 can be used to counteract the main distortion at the periphery of the image
