@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,33 +11,8 @@
 		BF1453181E322A440042598E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1453171E322A440042598E /* ViewController.swift */; };
 		BF14531D1E322A440042598E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF14531C1E322A440042598E /* Assets.xcassets */; };
 		BF1453201E322A440042598E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF14531E1E322A440042598E /* LaunchScreen.storyboard */; };
-		BFF6BBB41E40CF4D0000B243 /* MetalScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF6BBB11E40CF360000B243 /* MetalScope.framework */; };
-		BFF6BBB51E40CF4D0000B243 /* MetalScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFF6BBB11E40CF360000B243 /* MetalScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5F4C33A2C21926500DBC3B4 /* MetalScope in Frameworks */ = {isa = PBXBuildFile; productRef = D5F4C3392C21926500DBC3B4 /* MetalScope */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BFF6BBB01E40CF360000B243 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFF6BBAC1E40CF360000B243 /* MetalScope.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BFB891781E2E013400FA9129;
-			remoteInfo = MetalScope;
-		};
-		BFF6BBB21E40CF3C0000B243 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFF6BBAC1E40CF360000B243 /* MetalScope.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BFB891771E2E013400FA9129;
-			remoteInfo = MetalScope;
-		};
-		BFF6BBB61E40CF4D0000B243 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFF6BBAC1E40CF360000B243 /* MetalScope.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BFB891771E2E013400FA9129;
-			remoteInfo = MetalScope;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BF1453331E322A7A0042598E /* Embed Frameworks */ = {
@@ -46,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BFF6BBB51E40CF4D0000B243 /* MetalScope.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +34,7 @@
 		BF14531C1E322A440042598E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF14531F1E322A440042598E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF1453211E322A440042598E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFF6BBAC1E40CF360000B243 /* MetalScope.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MetalScope.xcodeproj; path = ../../MetalScope.xcodeproj; sourceTree = "<group>"; };
+		D5F4C3372C21925900DBC3B4 /* MetalScope */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MetalScope; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF6BBB41E40CF4D0000B243 /* MetalScope.framework in Frameworks */,
+				D5F4C33A2C21926500DBC3B4 /* MetalScope in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +53,9 @@
 			isa = PBXGroup;
 			children = (
 				BF1453141E322A440042598E /* Sources */,
+				D5F4C3372C21925900DBC3B4 /* MetalScope */,
 				BF1453131E322A440042598E /* Products */,
-				BFF6BBAC1E40CF360000B243 /* MetalScope.xcodeproj */,
+				D5F4C3382C21926500DBC3B4 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -108,12 +83,11 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		BFF6BBAD1E40CF360000B243 /* Products */ = {
+		D5F4C3382C21926500DBC3B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFF6BBB11E40CF360000B243 /* MetalScope.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,10 +105,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				BFF6BBB31E40CF3C0000B243 /* PBXTargetDependency */,
-				BFF6BBB71E40CF4D0000B243 /* PBXTargetDependency */,
 			);
 			name = StereoImage;
+			packageProductDependencies = (
+				D5F4C3392C21926500DBC3B4 /* MetalScope */,
+			);
 			productName = StereoSphericalPhoto;
 			productReference = BF1453121E322A440042598E /* StereoImage.app */;
 			productType = "com.apple.product-type.application";
@@ -160,34 +135,19 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = BF1453091E322A440042598E;
 			productRefGroup = BF1453131E322A440042598E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BFF6BBAD1E40CF360000B243 /* Products */;
-					ProjectRef = BFF6BBAC1E40CF360000B243 /* MetalScope.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BF1453111E322A440042598E /* StereoImage */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BFF6BBB11E40CF360000B243 /* MetalScope.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MetalScope.framework;
-			remoteRef = BFF6BBB01E40CF360000B243 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BF1453101E322A440042598E /* Resources */ = {
@@ -212,19 +172,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BFF6BBB31E40CF3C0000B243 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MetalScope;
-			targetProxy = BFF6BBB21E40CF3C0000B243 /* PBXContainerItemProxy */;
-		};
-		BFF6BBB71E40CF4D0000B243 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MetalScope;
-			targetProxy = BFF6BBB61E40CF4D0000B243 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF14531E1E322A440042598E /* LaunchScreen.storyboard */ = {
@@ -284,6 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,9 +280,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -344,13 +294,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8J6VSUTQNX;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eje-c.MetalScope.StereoImage";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.q42.MetalScope.StereoImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -360,13 +312,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8J6VSUTQNX;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eje-c.MetalScope.StereoImage";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.q42.MetalScope.StereoImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -393,6 +347,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5F4C3392C21926500DBC3B4 /* MetalScope */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MetalScope;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF14530A1E322A440042598E /* Project object */;
 }

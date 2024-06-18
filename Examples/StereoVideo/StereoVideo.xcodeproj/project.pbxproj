@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,34 +11,9 @@
 		BF9B15D11E488AF3004CC8CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B15D01E488AF3004CC8CE /* ViewController.swift */; };
 		BF9B15D61E488AF3004CC8CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9B15D51E488AF3004CC8CE /* Assets.xcassets */; };
 		BF9B15D91E488AF3004CC8CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9B15D71E488AF3004CC8CE /* LaunchScreen.storyboard */; };
-		BF9B15E91E488BCF004CC8CE /* MetalScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9B15E61E488BBD004CC8CE /* MetalScope.framework */; };
-		BF9B15EA1E488BD0004CC8CE /* MetalScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF9B15E61E488BBD004CC8CE /* MetalScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF9B15F01E488DD5004CC8CE /* Sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BF9B15EF1E488DD5004CC8CE /* Sample.mp4 */; };
+		D5F4C33E2C2192E600DBC3B4 /* MetalScope in Frameworks */ = {isa = PBXBuildFile; productRef = D5F4C33D2C2192E600DBC3B4 /* MetalScope */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BF9B15E51E488BBD004CC8CE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF9B15E11E488BBC004CC8CE /* MetalScope.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BFB891781E2E013400FA9129;
-			remoteInfo = MetalScope;
-		};
-		BF9B15E71E488BC6004CC8CE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF9B15E11E488BBC004CC8CE /* MetalScope.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BFB891771E2E013400FA9129;
-			remoteInfo = MetalScope;
-		};
-		BF9B15EB1E488BD0004CC8CE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF9B15E11E488BBC004CC8CE /* MetalScope.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BFB891771E2E013400FA9129;
-			remoteInfo = MetalScope;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BF9B15ED1E488BD0004CC8CE /* Embed Frameworks */ = {
@@ -47,7 +22,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF9B15EA1E488BD0004CC8CE /* MetalScope.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,8 +35,8 @@
 		BF9B15D51E488AF3004CC8CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF9B15D81E488AF3004CC8CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF9B15DA1E488AF3004CC8CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF9B15E11E488BBC004CC8CE /* MetalScope.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MetalScope.xcodeproj; path = ../../MetalScope.xcodeproj; sourceTree = "<group>"; };
 		BF9B15EF1E488DD5004CC8CE /* Sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sample.mp4; sourceTree = "<group>"; };
+		D5F4C33B2C2192D100DBC3B4 /* MetalScope */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MetalScope; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF9B15E91E488BCF004CC8CE /* MetalScope.framework in Frameworks */,
+				D5F4C33E2C2192E600DBC3B4 /* MetalScope in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,8 +55,9 @@
 			isa = PBXGroup;
 			children = (
 				BF9B15CD1E488AF3004CC8CE /* Sources */,
+				D5F4C33B2C2192D100DBC3B4 /* MetalScope */,
 				BF9B15CC1E488AF3004CC8CE /* Products */,
-				BF9B15E11E488BBC004CC8CE /* MetalScope.xcodeproj */,
+				D5F4C33C2C2192E600DBC3B4 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -111,12 +86,11 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		BF9B15E21E488BBC004CC8CE /* Products */ = {
+		D5F4C33C2C2192E600DBC3B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF9B15E61E488BBD004CC8CE /* MetalScope.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,10 +108,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				BF9B15E81E488BC6004CC8CE /* PBXTargetDependency */,
-				BF9B15EC1E488BD0004CC8CE /* PBXTargetDependency */,
 			);
 			name = StereoVideo;
+			packageProductDependencies = (
+				D5F4C33D2C2192E600DBC3B4 /* MetalScope */,
+			);
 			productName = StereoVideo;
 			productReference = BF9B15CB1E488AF3004CC8CE /* StereoVideo.app */;
 			productType = "com.apple.product-type.application";
@@ -163,34 +138,19 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = BF9B15C21E488AF3004CC8CE;
 			productRefGroup = BF9B15CC1E488AF3004CC8CE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BF9B15E21E488BBC004CC8CE /* Products */;
-					ProjectRef = BF9B15E11E488BBC004CC8CE /* MetalScope.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BF9B15CA1E488AF3004CC8CE /* StereoVideo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BF9B15E61E488BBD004CC8CE /* MetalScope.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MetalScope.framework;
-			remoteRef = BF9B15E51E488BBD004CC8CE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BF9B15C91E488AF3004CC8CE /* Resources */ = {
@@ -216,19 +176,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BF9B15E81E488BC6004CC8CE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MetalScope;
-			targetProxy = BF9B15E71E488BC6004CC8CE /* PBXContainerItemProxy */;
-		};
-		BF9B15EC1E488BD0004CC8CE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MetalScope;
-			targetProxy = BF9B15EB1E488BD0004CC8CE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF9B15D71E488AF3004CC8CE /* LaunchScreen.storyboard */ = {
@@ -288,6 +235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -336,9 +284,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -348,13 +298,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8J6VSUTQNX;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eje-c.MetalScope.StereoVideo";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.q42.MetalScope.StereoVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -364,13 +316,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8J6VSUTQNX;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eje-c.MetalScope.StereoVideo";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.q42.MetalScope.StereoVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -397,6 +351,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5F4C33D2C2192E600DBC3B4 /* MetalScope */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MetalScope;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF9B15C31E488AF3004CC8CE /* Project object */;
 }

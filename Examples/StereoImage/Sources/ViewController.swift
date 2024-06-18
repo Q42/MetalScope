@@ -94,7 +94,7 @@ final class ViewController: UIViewController {
         return .lightContent
     }
 
-    func presentStereoView() {
+    @objc func presentStereoView() {
         let introView = UILabel()
         introView.text = "Place your phone into your Cardboard viewer."
         introView.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
