@@ -74,6 +74,12 @@ public struct StereoPanorama: UIViewRepresentable {
         }
     }
 
+    public static func dismantleUIView(_ stereoView: StereoView, coordinator: Coordinator) {
+        stereoView.isPlaying = false
+        stereoView.scene = nil
+        stereoView.sceneRendererDelegate = nil
+    }
+
     public func makeCoordinator() -> Coordinator {
         Coordinator()
     }

@@ -56,6 +56,12 @@ public struct Panorama: UIViewRepresentable {
         }
     }
 
+    public static func dismantleUIView(_ panoramaView: PanoramaView, coordinator: Coordinator) {
+        panoramaView.isPlaying = false
+        panoramaView.scene = nil
+        panoramaView.sceneRendererDelegate = nil
+    }
+
     public func makeCoordinator() -> Coordinator {
         Coordinator()
     }
