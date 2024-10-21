@@ -149,14 +149,12 @@ extension MTLCommandBufferStatus: CustomStringConvertible {
     }
 }
 
-private extension StereoRenderer {
-    final class EyeRenderingConfiguration {
-        let texture: MTLTexture
-        var pointOfView: SCNNode?
+final class EyeRenderingConfiguration {
+    let texture: MTLTexture
+    var pointOfView: SCNNode?
 
-        init(texture: MTLTexture) {
-            self.texture = texture
-        }
+    init(texture: MTLTexture) {
+        self.texture = texture
     }
 }
 
