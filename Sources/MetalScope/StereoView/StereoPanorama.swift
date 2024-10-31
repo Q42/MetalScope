@@ -53,7 +53,7 @@ public struct StereoPanorama: UIViewRepresentable {
     }
 
     public func makeUIView(context: Context) -> StereoView {
-        #if arch(arm) || arch(arm64)
+        #if !targetEnvironment(simulator)
         let stereoView = StereoView(device: context.coordinator.metalDevice)
         #else
         let stereoView = StereoView()
@@ -68,7 +68,9 @@ public struct StereoPanorama: UIViewRepresentable {
         case .image(let image):
             stereoView.load(image, format: format)
         case .video(let player):
+            #if !targetEnvironment(simulator)
             stereoView.load(player, format: format)
+            #endif
         case .scene(let scene):
             stereoView.scene = scene
         }

@@ -35,7 +35,7 @@ public struct Panorama: UIViewRepresentable {
     }
 
     public func makeUIView(context: Context) -> PanoramaView {
-        #if arch(arm) || arch(arm64)
+        #if !targetEnvironment(simulator)
         let panoramaView = PanoramaView(frame: .zero, device: context.coordinator.device)
         #else
         let panoramaView = PanoramaView(frame: .zero)
@@ -50,7 +50,9 @@ public struct Panorama: UIViewRepresentable {
         case .image(let image):
             panoramaView.load(image, format: format)
         case .video(let player):
+            #if !targetEnvironment(simulator)
             panoramaView.load(player, format: format)
+            #endif
         case .scene(let scene):
             panoramaView.scene = scene
         }
