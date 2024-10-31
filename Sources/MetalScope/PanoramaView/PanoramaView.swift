@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 
 public final class PanoramaView: UIView, SceneLoadable {
-    #if (arch(arm) || arch(arm64)) && os(iOS)
+    #if !targetEnvironment(simulator)
     public let device: MTLDevice
     #endif
 
@@ -41,7 +41,7 @@ public final class PanoramaView: UIView, SceneLoadable {
     }()
 
     lazy var scnView: SCNView = {
-        #if (arch(arm) || arch(arm64)) && os(iOS)
+        #if !targetEnvironment(simulator)
         let view = SCNView(frame: self.bounds, options: [
             SCNView.Option.preferredRenderingAPI.rawValue: SCNRenderingAPI.metal.rawValue,
             SCNView.Option.preferredDevice.rawValue: self.device
@@ -69,7 +69,7 @@ public final class PanoramaView: UIView, SceneLoadable {
         return InterfaceOrientationUpdater(orientationNode: self.orientationNode)
     }()
 
-    #if (arch(arm) || arch(arm64)) && os(iOS)
+    #if !targetEnvironment(simulator)
     public init(frame: CGRect, device: MTLDevice) {
         self.device = device
         super.init(frame: frame)
@@ -108,7 +108,7 @@ public final class PanoramaView: UIView, SceneLoadable {
 
 extension PanoramaView: ImageLoadable {}
 
-#if (arch(arm) || arch(arm64)) && os(iOS)
+#if !targetEnvironment(simulator)
 extension PanoramaView: VideoLoadable {}
 #endif
 

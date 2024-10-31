@@ -6,7 +6,7 @@
 //  Copyright © 2017 eje Inc. All rights reserved.
 //
 
-#if (arch(arm) || arch(arm64)) && os(iOS)
+#if !targetEnvironment(simulator)
 
 import SceneKit
 import AVFoundation

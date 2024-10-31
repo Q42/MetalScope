@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 
 open class StereoViewController: UIViewController, SceneLoadable {
-    #if (arch(arm) || arch(arm64)) && os(iOS)
+    #if !targetEnvironment(simulator)
     public let device: MTLDevice
     #endif
 
@@ -101,7 +101,7 @@ open class StereoViewController: UIViewController, SceneLoadable {
     private weak var introdutionContainerView: UIView?
     private var introductionViewUpdateTimer: DispatchSourceTimer?
 
-    #if (arch(arm) || arch(arm64)) && os(iOS)
+    #if !targetEnvironment(simulator)
     public init(device: MTLDevice) {
         self.device = device
 
@@ -118,7 +118,7 @@ open class StereoViewController: UIViewController, SceneLoadable {
     }
 
     open override func loadView() {
-        #if (arch(arm) || arch(arm64)) && os(iOS)
+        #if !targetEnvironment(simulator)
         let stereoView = StereoView(device: device)
         #else
         let stereoView = StereoView()
@@ -377,6 +377,6 @@ open class StereoViewController: UIViewController, SceneLoadable {
 
 extension StereoViewController: ImageLoadable {}
 
-#if (arch(arm) || arch(arm64)) && os(iOS)
+#if !targetEnvironment(simulator)
 extension StereoViewController: VideoLoadable {}
 #endif
